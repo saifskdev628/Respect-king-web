@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Respect King - سيرفر فايف إم</title>
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #e67e22;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    nav button:hover {
+      background: #e67e22;
+    }
+
+    section {
+      display: none;
+      padding: 30px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 5px;
+    }
+
+    button.submit-btn {
+      background: #e67e22;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Respect King - سيرفر فايف إم</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">الصفحة الرئيسية</button>
+    <button onclick="showSection('rules')">القوانين</button>
+    <button onclick="showSection('apply')">التقديمات</button>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>عن السيرفر</h2>
+    <p>مرحباً بك في Respect King، أحد أفضل سيرفرات فايف إم في العالم العربي! نقدم لك تجربة لعب واقعية واحترافية تشمل جميع أنظمة الحياة الواقعية، الإدارة الصارمة، وأفضل الطاقم.</p>
+  </section>
+
+  <section id="rules">
+    <h2>قوانين السيرفر</h2>
+    <ul>
+      <li>ممنوع السب أو الإهانة لأي لاعب أو إداري.</li>
+      <li>احترام القوانين والتعليمات داخل السيرفر.</li>
+      <li>ممنوع استغلال الثغرات أو البرامج الخارجية.</li>
+      <li>التعامل باحترافية أثناء اللعب وتجنب المشاكل.</li>
+    </ul>
+  </section>
+
+  <section id="apply">
+    <h2>نموذج تقديم</h2>
+    <form onsubmit="sendApplication(event)">
+      <div class="form-group">
+        <label>الاسم:</label>
+        <input type="text" required>
+      </div>
+      <div class="form-group">
+        <label>العمر:</label>
+        <input type="number" required>
+      </div>
+      <div class="form-group">
+        <label>لماذا تريد الانضمام؟</label>
+        <textarea rows="4" required></textarea>
+      </div>
+      <button class="submit-btn" type="submit">إرسال التقديم</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Respect King - جميع الحقوق محفوظة
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+    }
+
+    function sendApplication(event) {
+      event.preventDefault();
+      alert("تم إرسال التقديم بنجاح! سيتم التواصل معك إذا تم قبولك.");
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
